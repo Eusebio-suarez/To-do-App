@@ -1,0 +1,57 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+
+    #title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #cardInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-family: sans-serif;  
+        background-color: #2d3b4d;
+        border-radius: 12px;
+        border: 1px solid #7e97b27c;
+        transition: all 200ms;
+        padding: 30px;
+        gap: 20px;
+
+        span{
+            font-weight: bolder;
+            color: #007AFF;
+        }
+
+        p{
+            max-width: 400px;
+            color:#f5f7fad8;
+        }
+    }
+
+    button{
+        padding: 10px 20px;
+        border-radius: 6px;
+        color: #f5f7fad8;
+        background-color: #312ECB;
+        font-weight: bold;
+        transition: all 200ms;
+    }
+
+    button:hover{
+        transition: all 200ms;
+        box-shadow: 0px 0px 40px #007bffcc;
+    }
+}
+
+h1{
+    color: #f5f7fa;
+    font-family: sans-serif;
+}
