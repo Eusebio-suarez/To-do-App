@@ -29,7 +29,7 @@
             border-radius: 6px;
             padding: 9px 16px;
             background-color: #31425b;
-            border: 1.5px solid #7e97b240;
+            border: 2px solid #7e97b240;
             color: #f5f7fad0;
         }
 
@@ -39,7 +39,7 @@
 
         input:focus{
             outline: none;
-            border: 1.5px solid #7e97b2b7;
+            border: 2px solid #7e97b2b7;
         }
 
         label{
