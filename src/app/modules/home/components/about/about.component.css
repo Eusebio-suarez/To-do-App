@@ -41,7 +41,7 @@ section{
         padding: 10px 20px;
         border-radius: 6px;
         color: #f5f7fad8;
-        background-color: #312ECB;
+        background: linear-gradient(90deg, #1eacff, #312ECB);
         border: 1px solid #7e97b251;
         font-weight: bold;
         transition: all 200ms;

@@ -6,6 +6,7 @@
     padding: 35px 60px;
     border-radius: 12px;
     border: 1px solid #7e97b27c;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     font-family: sans-serif;
     color:#f5f7fa;
     gap: 25px;
@@ -24,19 +25,21 @@
         gap: 8px;
 
         input{
+            font-weight: 800;
             border-radius: 6px;
             padding: 9px 16px;
             background-color: #31425b;
-            border: 1px solid #7e97b27c;
+            border: 1.5px solid #7e97b240;
             color: #f5f7fad0;
         }
 
         input::placeholder{
-            color: #f5f7faa2;
+            color: #f5f7fa64;
         }
 
         input:focus{
             outline: none;
+            border: 1.5px solid #7e97b2b7;
         }
 
         label{
@@ -52,7 +55,7 @@
         padding: 10px 20px;
         border-radius: 6px;
         color: #f5f7fad8;
-        background-color: #312ECB;
+        background: linear-gradient(90deg, #1eacff, #312ECB);
         border: 1px solid #7e97b251;
         font-weight: bold;
         transition: all 200ms;
@@ -63,4 +66,9 @@
         transition: all 200ms;
         box-shadow: 0px 0px 20px #007bffcc;
     }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
 }
