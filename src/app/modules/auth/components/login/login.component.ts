@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,11 @@ export class LoginComponent {
   //campo contraseña del correo
   password:FormControl
 
-  constructor(public loginService:LoginService){
+  constructor(
+    private loginService:LoginService,
+    private toastr:ToastrService,
+    private router:Router
+  ){
   //inicialisar los atributos
     this.email = new FormControl('',[Validators.email,Validators.required])
     this.password = new FormControl('',[Validators.minLength(8),Validators.required])
@@ -32,10 +38,12 @@ export class LoginComponent {
       next: (response)=>{
 
         localStorage.setItem("Authorization","Bearer "+response.data.token)
-        alert(response.message)
+        this.toastr.success(response.message,"Éxito")
+        this.router.navigate([""])
       },
-      error: ()=>{
-        alert("error al iniciar sesión")
+      error: (e)=>{
+        this.toastr.error(e.error.message,"Error")
+        console.log(e)
       }
     })
   }

@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HomeModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar:true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
