@@ -12,4 +12,8 @@
         <input [ngClass]="{'invalid': password.invalid && password.touched}" formControlName="password" type="password" id="password" placeholder="●●●●●●●●">
     </div>
     <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+    <div class="signUp">
+        <p>no tienes una cuenta?</p>
+        <a routerLink="register">registrate aqui</a>
+    </div>
 </form>
