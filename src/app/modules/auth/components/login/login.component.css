@@ -52,6 +52,12 @@
             border: 2px solid #7e97b2b7;
         }
 
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #31425b inset !important;
+            -webkit-text-fill-color: #f5f7fa !important; 
+            border: 1.5px solid #7e97b240; 
+        }
+
         label{
             font-weight: bold;
             font-size: small;
