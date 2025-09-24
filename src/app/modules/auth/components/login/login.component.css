@@ -24,6 +24,16 @@
         color: #fff;
         gap: 8px;
 
+        .invalid{
+            border: 1.9px solid #fd379c;
+
+        }
+
+        .invalid:focus{
+            outline: none;
+            border: 1.9px solid #fd379c;
+        }
+        
         input{
             font-weight: 800;
             border-radius: 6px;
@@ -61,6 +71,7 @@
         transition: all 200ms;
         cursor: pointer;
     }
+
 
     button:hover{
         transition: all 200ms;
