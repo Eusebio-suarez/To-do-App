@@ -39,7 +39,7 @@ export class LoginComponent {
 
         localStorage.setItem("Authorization","Bearer "+response.data.token)
         this.toastr.success(response.message,"Éxito")
-        this.router.navigate([""])
+        this.router.navigate(["board"])
       },
       error: (e)=>{
         this.toastr.error(e.error.message,"Error")
