@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { BoardModule } from './modules/board/board.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HomeModule,
     AuthModule,
+    BoardModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
