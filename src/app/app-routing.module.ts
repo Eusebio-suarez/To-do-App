@@ -4,6 +4,7 @@ import { HomeComponent } from './modules/home/pages/home/home.component';
 import { AuthPageComponent } from './modules/auth/pages/auth-page/auth-page.component';
 import { LoginComponent } from './modules/auth/components/login/login.component';
 import { RegisterComponent } from './modules/auth/components/register/register.component';
+import { BoardPageComponent } from './modules/board/pages/board-page/board-page.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
         component:RegisterComponent
       }
     ]
+  },
+  {
+    path:"board",
+    component:BoardPageComponent
   }
 ];
 
