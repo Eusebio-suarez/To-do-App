@@ -1,11 +1,14 @@
 main{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 70px 80px;
     display: flex;
     justify-content: space-between;
 
     .column{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         width: 272px;
         height: fit-content;
         max-height: 100%;
@@ -13,8 +16,11 @@ main{
         border: 1px solid #7e97b27c;
         box-shadow: 2px 5px 30px hsl(0, 0%, 4%);
         border-radius: 12px;
+        overflow-y: auto;
 
         .column-header{
+            position: sticky;
+            top: 0;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -22,9 +28,12 @@ main{
             font-weight: 600;
             padding: 14px;
             color: #f5f7fad4;
+            border-bottom: 1px solid #7e97b27c;
+            background-color: #1e2633;
         }
 
         .column-body{
+            flex: 1;
             padding: 10px;
             display: flex;
             flex-direction: column;
@@ -83,3 +92,21 @@ main{
         }
     }
 }
+
+.column::-webkit-scrollbar {
+    width: 8px;             
+}
+
+.column::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.column::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5b5be5, #312ECB); 
+    border-radius: 20px;     
+    border: 2px solid #1e2633;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+
