@@ -1,7 +1,7 @@
 main{
     width: 100%;
     height: 100%;
-    padding: 50px 70px;
+    padding: 70px 80px;
     display: flex;
     justify-content: space-between;
 
@@ -11,6 +11,7 @@ main{
         max-height: 100%;
         background-color: #1e2633;
         border: 1px solid #7e97b27c;
+        box-shadow: 2px 5px 30px hsl(0, 0%, 4%);
         border-radius: 12px;
 
         .column-header{
@@ -21,6 +22,64 @@ main{
             font-weight: 600;
             padding: 14px;
             color: #f5f7fad4;
+        }
+
+        .column-body{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+
+            .task-card{
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #2d3b4d;
+                border: 1px solid #7e97b248;
+                box-shadow: 1px 1px 5px hsl(0, 0%, 4%);
+                transition: all 200ms;
+                cursor: pointer;
+
+                p{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #f5f7fad4;
+                    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+                }
+            }
+
+            
+            .task-card:hover,:active{
+                border: 1px solid #7e97b2;
+                transform: scale(1.03);
+                transition: all 200ms;
+            }
+
+            
+            .to-do{
+                border-left: 4px solid  #1eacff;
+            }
+
+            .to-do:hover{
+                border-left: 4px solid  #1eacff;
+                transition: all 200ms;
+            }
+
+            .in-progress{
+                border-left: 4px solid #b8b70d;
+            }
+
+            .in-progress:hover{
+                border-left: 4px solid  #b8b70d;
+                transition: all 200ms;
+            }
+            
+            .done{
+                border-left: 4px solid  #029e39;
+            }
+
+            .done:hover{
+                border-left: 4px solid #029e39;
+                transition: all 200ms;
+            }
         }
     }
 }
