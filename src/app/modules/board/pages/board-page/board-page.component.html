@@ -41,5 +41,5 @@
             </article>
         </div>
     </div>
-    <app-task-details (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
+    <app-task-details (updateTask)="onUpdateTask($event)" (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
 </main>
