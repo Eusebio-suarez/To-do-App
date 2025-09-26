@@ -39,10 +39,13 @@ main{
             flex-direction: column;
 
             .task-card{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 padding: 10px;
                 border-radius: 6px;
                 background-color: #2d3b4d;
-                border: 1px solid #7e97b248;
+                border: 1px solid #7e97b28c;
                 box-shadow: 1px 1px 5px hsl(0, 0%, 4%);
                 transition: all 200ms;
                 cursor: pointer;
@@ -53,40 +56,36 @@ main{
                     color: #f5f7fad4;
                     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
                 }
+                button{
+                    opacity: 0;
+                    background: none;
+                    border-radius: 6px;
+                }
             }
 
+            .task-card:hover button{
+                opacity: 1;
+            }
             
             .task-card:hover,:active{
-                border: 1px solid #7e97b2;
-                transform: scale(1.03);
+                transform: scale(1.02);
                 transition: all 200ms;
-            }
-
-            
-            .to-do{
-                border-left: 4px solid  #1eacff;
             }
 
             .to-do:hover{
-                border-left: 4px solid  #1eacff;
+                box-shadow: 0px 0px 10px #1eacff;
                 transition: all 200ms;
             }
 
-            .in-progress{
-                border-left: 4px solid #b8b70d;
-            }
 
             .in-progress:hover{
-                border-left: 4px solid  #b8b70d;
+                box-shadow: 0px 0px 10px  #b8b70d;
                 transition: all 200ms;
             }
             
-            .done{
-                border-left: 4px solid  #029e39;
-            }
 
             .done:hover{
-                border-left: 4px solid #029e39;
+                box-shadow: 0px 0px 10px #029e39;
                 transition: all 200ms;
             }
         }
@@ -108,5 +107,3 @@ main{
     cursor: pointer;
     min-height: 40px;
 }
-
-
