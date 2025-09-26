@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, SimpleChange, SimpleChanges } f
 import { TaskResponse } from '../../models/response/taskResponse';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OnChanges } from '@angular/core';
+import { TaskRequest } from '../../models/request/taskRequest';
 
 @Component({
   selector: 'app-task-details',
@@ -18,6 +19,9 @@ export class TaskDetailsComponent implements OnChanges {
 
   @Output()
   close = new EventEmitter<void>
+
+  @Output()
+  updateTask = new EventEmitter<{id: number, data:TaskRequest}>
 
   constructor(private fb:FormBuilder){
 
@@ -44,9 +48,18 @@ export class TaskDetailsComponent implements OnChanges {
     this.close.emit()
   }
 
-  handlerSubmit(){
-    console.log(this.task?.id)
-    console.log(this.formUpdate.value)
+handlerSubmit() {
+    if (this.task) {
+      const { title, description, status } = this.formUpdate.value;
+      this.updateTask.emit({
+        id: this.task.id,
+        data: {
+          title: title ?? '',
+          description: description ?? '',
+          status: status ?? ''
+        }
+      });
+    }
   }
 
 }
