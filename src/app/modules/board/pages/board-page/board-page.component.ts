@@ -64,4 +64,16 @@ export class BoardPageComponent implements OnInit {
     })
     this.closeModal()
   }
+
+  deleteTask(id:number){
+    this.taskService.deleteTask(id).subscribe({
+      next:(response)=>{
+        this.toastr.success(response.message,"Éxito")
+        this.getTasks()
+      },
+      error:(e)=>{
+        this.toastr.error(e.error.message||"error al eliminar la tarea","Error")
+      }
+    })
+  }
 }
