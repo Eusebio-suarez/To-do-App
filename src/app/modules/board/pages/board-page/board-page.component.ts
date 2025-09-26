@@ -65,8 +65,8 @@ export class BoardPageComponent implements OnInit {
     this.closeModal()
   }
 
-  deleteTask(id:number){
-    this.taskService.deleteTask(id).subscribe({
+  onDeleteTask(event:{id:number}){
+    this.taskService.deleteTask(event.id).subscribe({
       next:(response)=>{
         this.toastr.success(response.message,"Éxito")
         this.getTasks()

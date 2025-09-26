@@ -103,19 +103,30 @@
 
         .modal-actions{
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
                     
             button{
                 text-decoration: none;
-                width: 40%;
+                width: fit-content;
                 padding: 10px 20px;
                 border-radius: 6px;
                 color: #f5f7fad8;
-                background: linear-gradient(90deg, #1eacff, #312ECB);
                 border: 1px solid #7e97b251;
                 font-weight: bold;
                 transition: all 200ms;
                 cursor: pointer;
+            }
+
+            .save{
+                width: 30%;
+                padding: 10px 20px;
+                background: linear-gradient(90deg, #1eacff, #312ECB);
+
+            }
+
+            .delete{
+                padding: 8px 13px;
+                background-color: #e11414;
             }
 
             button:hover{
