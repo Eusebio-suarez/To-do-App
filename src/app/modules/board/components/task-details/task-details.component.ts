@@ -18,10 +18,15 @@ export class TaskDetailsComponent implements OnChanges {
   isOpen:boolean = false
 
   @Output()
-  close = new EventEmitter<void>
+  close = new EventEmitter<void>()
 
   @Output()
-  updateTask = new EventEmitter<{id: number, data:TaskRequest}>
+  updateTask = new EventEmitter<{id: number, data:TaskRequest}>()
+
+  @Output()
+  deleteTask = new EventEmitter<{id:number}>()
+
+
 
   constructor(private fb:FormBuilder){
 
@@ -61,5 +66,10 @@ handlerSubmit() {
       });
     }
   }
+
+handlerDeleted(){
+  this.deleteTask.emit({id:this.task?.id||0})
+  this.closeModal()
+}
 
 }

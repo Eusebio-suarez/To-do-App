@@ -40,9 +40,6 @@ main{
 
             .task-card{
                 display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 10px;
                 padding: 10px;
                 border-radius: 6px;
                 background-color: #2d3b4d;
@@ -52,8 +49,10 @@ main{
                 cursor: pointer;
 
                 .task-info{
+                    width: 100%;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
                     gap: 10px;
                 }    
 
@@ -75,7 +74,7 @@ main{
 
                 .date{
                     padding: 3px;
-                    background: linear-gradient(90deg, #1eacff, #312ECB);
+                    background: linear-gradient(90deg, #1eadffd6, #312ecbd6);
                     border: 1px solid #7e97b2;
                     border-radius: 6px;
                 }
@@ -86,6 +85,10 @@ main{
                     background: none;
                     border-radius: 6px;
                 }
+            }
+
+            .task-card:hover{
+                gap: 10px;
             }
 
             .task-card:hover button{
@@ -113,6 +116,35 @@ main{
             .done:hover{
                 box-shadow: 0px 0px 10px #029e39;
                 transition: all 200ms;
+            }
+        }
+
+        .column-footer{
+            position: sticky;
+            bottom: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px;
+            border-top: 1px solid #7e97b296;
+            background-color: #1e2633;
+
+            button{
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                border-radius: 8px;
+                background: none;
+                cursor: pointer;
+                color: #f5f7fad4;
+                font-size: 14px;
+                font-weight: 600;
+                gap: 5px;
+            }
+
+            button:hover{
+                background-color: #2d3b4d;
             }
         }
     }
