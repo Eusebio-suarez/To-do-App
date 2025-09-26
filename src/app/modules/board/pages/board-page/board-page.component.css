@@ -41,7 +41,8 @@ main{
             .task-card{
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 5px;
                 padding: 10px;
                 border-radius: 6px;
                 background-color: #2d3b4d;
@@ -50,14 +51,35 @@ main{
                 transition: all 200ms;
                 cursor: pointer;
 
+                .task-info{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }    
+
+                .task-actions{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
                 p{
                     font-size: 14px;
                     font-weight: 500;
                     color: #f5f7fad4;
                     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
                 }
+
+                .date{
+                    padding: 3px;
+                    background: linear-gradient(90deg, #1eacff, #312ECB);
+                    border: 1px solid #7e97b2;
+                    border-radius: 6px;
+                }
+
                 button{
                     opacity: 0;
+                    display: none;
                     background: none;
                     border-radius: 6px;
                 }
@@ -65,6 +87,7 @@ main{
 
             .task-card:hover button{
                 opacity: 1;
+                display: block;
             }
             
             .task-card:hover,:active{
