@@ -24,15 +24,19 @@ export class BoardPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.taskService.getTasks().subscribe({
-        next:(response)=>{
-          this.tasks= response.data
-          console.log(this.tasks)
-        },
-        error(e) {
-            console.log(e.error.message)
-        },
-      })
+    this.getTasks()
+  }
+
+  getTasks(){
+    this.taskService.getTasks().subscribe({
+      next:(response)=>{
+        this.tasks= response.data
+        console.log(this.tasks)
+      },
+      error(e) {
+        console.log(e.error.message)
+      },
+    })
   }
 
   getFilterTasks(status:string ){
@@ -52,10 +56,12 @@ export class BoardPageComponent implements OnInit {
     this.taskService.updateTask(event.id,event.data).subscribe({
       next:(response)=>{
         this.toastr.success(response.message,"Éxito")
+        this.getTasks()
       },
       error:(e)=>{
         this.toastr.error(e.error.message,"Error")
       }
     })
+    this.closeModal()
   }
 }
