@@ -10,6 +10,10 @@ import { TasksService } from '../../services/tasks.service';
 export class BoardPageComponent implements OnInit {
   tasks: TaskResponse[] = []
 
+  selectedTask: TaskResponse | null = null 
+
+  isOpenModal: boolean = false
+
   constructor(private taskService:TasksService){
 
   }
@@ -28,5 +32,14 @@ export class BoardPageComponent implements OnInit {
 
   getFilterTasks(status:string ){
     return this.tasks.filter(task => task.status == status)
+  }
+
+  selectTask(task:TaskResponse){
+    this.selectedTask = task
+    this.isOpenModal = true
+  }
+
+  closeModal(){
+    this.isOpenModal=false
   }
 }
