@@ -16,6 +16,8 @@ export class BoardPageComponent implements OnInit {
 
   isOpenModal: boolean = false
 
+  isOpenForm: boolean = false
+
   constructor(
     private taskService:TasksService,
     private toastr:ToastrService
@@ -50,6 +52,14 @@ export class BoardPageComponent implements OnInit {
 
   closeModal(){
     this.isOpenModal=false
+  }
+
+  closeForm(){
+    this.isOpenForm=false
+  }
+
+  openForm(){
+    this.isOpenForm=true
   }
 
   onUpdateTask( event:{id:number,data:TaskRequest}){

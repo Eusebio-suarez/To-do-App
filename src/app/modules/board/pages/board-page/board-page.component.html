@@ -13,7 +13,7 @@
             </article>
         </div>
         <div class="column-footer">
-            <button>
+            <button (click)="openForm()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f7faa7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                 añadir tarea
             </button>
@@ -48,4 +48,5 @@
         </div>
     </div>
     <app-task-details (updateTask)="onUpdateTask($event)" (deleteTask)="onDeleteTask($event)" (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
+    <app-form-create [isOpen]="isOpenForm" (onCloseForm)="closeForm()"></app-form-create>  
 </main>
