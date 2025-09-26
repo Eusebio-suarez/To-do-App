@@ -13,14 +13,14 @@
 
 
     .modal{
-        padding: 30px 20px;
+        padding: 30px 30px;
         color:#f5f7faa9;
         background-color: #2d3b4d;
         border: 1px solid #7e97b2;
         border-radius: 12px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
 
         .modal-options{
             display: flex;
@@ -34,13 +34,15 @@
 
         .form-update{
             display: flex;
+            justify-content: space-between;
+            gap: 100px;
         }
 
         .form-header{
             display: flex;
             flex-direction: column;
-            gap: 30px;
             justify-content: space-between;
+            gap: 30px;
         }
 
         .form-body{
@@ -52,8 +54,7 @@
         .form-group{
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding: 0px 50px;
+            gap: 20px;
             color: #f5f7fad8;
 
             input,textarea{
