@@ -13,19 +13,18 @@
 
 
     .modal{
-        padding-bottom: 40px;
+        padding: 30px 20px;
         color:#f5f7faa9;
         background-color: #2d3b4d;
         border: 1px solid #7e97b2;
         border-radius: 12px;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
 
         .modal-options{
             display: flex;
-            justify-content: end;
-            padding: 10px;
+            justify-content: space-between;
 
             button{
                 cursor: pointer;
