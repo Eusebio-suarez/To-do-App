@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TaskResponse } from '../models/response/taskResponse';
 import { ApiResponse } from '../../auth/models/response/apiResponse';
+import { TaskRequest } from '../models/request/taskRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { ApiResponse } from '../../auth/models/response/apiResponse';
 export class TasksService {
 
   readonly API_URL = "http://localhost:8080/api/v1/tasks"
+
+  readonly API_URL_UPDATE = "http://localhost:8080/api/v1/tasks/update?id="
 
   constructor(private http:HttpClient) {}
 
@@ -22,5 +25,17 @@ export class TasksService {
     })
 
     return this.http.get<ApiResponse<TaskResponse[]>>(this.API_URL,{headers})
+  }
+
+  updateTask(id:number, data:TaskRequest):Observable<ApiResponse<TaskResponse>>{
+
+    const token = localStorage.getItem("Authorization")||""
+
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      "Authorization": token
+    })
+
+    return this.http.put<ApiResponse<TaskResponse>>(this.API_URL_UPDATE+id,data,{headers})
   }
 }
