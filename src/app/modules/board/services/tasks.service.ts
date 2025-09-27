@@ -12,6 +12,8 @@ export class TasksService {
 
   readonly API_URL = "http://localhost:8080/api/v1/tasks"
 
+  readonly API_URL_CREATE = "http://localhost:8080/api/v1/tasks/create"
+
   readonly API_URL_UPDATE = "http://localhost:8080/api/v1/tasks/update?id="
 
   readonly API_URL_DELETE = "http://localhost:8080/api/v1/tasks/delete?id="
@@ -26,8 +28,11 @@ export class TasksService {
   constructor(private http:HttpClient) {}
 
   getTasks():Observable<ApiResponse<TaskResponse[]>>{
-  
     return this.http.get<ApiResponse<TaskResponse[]>>(this.API_URL,{headers:this.headers})
+  }
+
+  createTask(task:TaskRequest):Observable<ApiResponse<TaskResponse>>{
+    return this.http.post<ApiResponse<TaskResponse>>(this.API_URL_CREATE,task,{headers:this.headers})
   }
 
   updateTask(id:number, data:TaskRequest):Observable<ApiResponse<TaskResponse>>{

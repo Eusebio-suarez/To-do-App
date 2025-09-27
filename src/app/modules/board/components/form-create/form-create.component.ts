@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { TaskRequest } from '../../models/request/taskRequest';
 
 @Component({
   selector: 'app-form-create',
@@ -13,6 +14,9 @@ export class FormCreateComponent {
   @Output()
   onCloseForm = new EventEmitter<void>()
 
+  @Output()
+  CreateTask = new EventEmitter<TaskRequest>
+
   constructor(private fb:FormBuilder){
 
   }
@@ -22,13 +26,24 @@ export class FormCreateComponent {
   }
 
   formCreate= this.fb.group({
-    "title": ["",[Validators.required]],
-    "description":["",[Validators.required]],
-    "status":["",[Validators.required]]
+    "title": ["tarea",[Validators.required]],
+    "description":["nueva tarea",[Validators.required]],
+    "status":["TODO",[Validators.required]]
   })
 
   createTask(){
-    console.log(this.formCreate.value)  
+    const {title,description,status} = this.formCreate.value
+    this.CreateTask.emit({
+      title:title||"",
+      description: description||"",
+      status: status||""
+    })
+    this.closeForm()
+    this.resetForm()
+  }
+
+  resetForm(){
+    this.formCreate.reset({title:"tarea",description:"nueva tarea",status:"TODO"})
   }
 
 }
