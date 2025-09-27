@@ -48,5 +48,5 @@
         </div>
     </div>
     <app-task-details (updateTask)="onUpdateTask($event)" (deleteTask)="onDeleteTask($event)" (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
-    <app-form-create [isOpen]="isOpenForm" (onCloseForm)="closeForm()"></app-form-create>  
+    <app-form-create (CreateTask)="onCreateTask($event)" [isOpen]="isOpenForm" (onCloseForm)="closeForm()"></app-form-create>  
 </main>

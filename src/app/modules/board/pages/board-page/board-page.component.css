@@ -73,8 +73,9 @@ main{
                 }
 
                 .date{
+                    font-size: small;
                     padding: 3px;
-                    background: linear-gradient(90deg, #1eadffd6, #312ecbd6);
+                    background-color: #0068c8;
                     border: 1px solid #7e97b2;
                     border-radius: 6px;
                 }
