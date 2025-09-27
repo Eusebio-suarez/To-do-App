@@ -23,7 +23,6 @@
                 <div class="form-group">
                     <label for="status" >Estado</label>
                     <select name="status" id="status" formControlName="status" [ngClass]="{'invalid':formCreate.controls.status.invalid && formCreate.controls.status.touched}" >
-                        <option value="">Seleccione un estado</option>
                         <option value="TODO">Por hacer</option>
                         <option value="INPROGRESS">En proceso</option>
                         <option value="DONE">Terminada</option>

@@ -86,4 +86,16 @@ export class BoardPageComponent implements OnInit {
       }
     })
   }
+
+  onCreateTask(task: TaskRequest){
+    this.taskService.createTask(task).subscribe({
+      next:(response)=>{
+        this.toastr.success(response.message,"Éxito")
+        this.getTasks()
+      },
+      error:(e)=>{
+        this.toastr.error(e.error.message,"Error")
+      }
+    })
+  }
 }
