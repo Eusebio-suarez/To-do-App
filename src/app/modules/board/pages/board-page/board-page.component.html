@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <main>
     <div class="column">
         <div class="column-header">
@@ -47,6 +48,6 @@
             </article>
         </div>
     </div>
-    <app-task-details (updateTask)="onUpdateTask($event)" (deleteTask)="onDeleteTask($event)" (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
-    <app-form-create (CreateTask)="onCreateTask($event)" [isOpen]="isOpenForm" (onCloseForm)="closeForm()"></app-form-create>  
 </main>
+<app-form-create (CreateTask)="onCreateTask($event)" [isOpen]="isOpenForm" (onCloseForm)="closeForm()"></app-form-create>  
+<app-task-details (updateTask)="onUpdateTask($event)" (deleteTask)="onDeleteTask($event)" (close)="closeModal()" *ngIf="isOpenModal" [isOpen]="isOpenModal" [task]="selectedTask"></app-task-details>
