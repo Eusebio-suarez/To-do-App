@@ -20,26 +20,21 @@ export class TasksService {
 
   readonly token = localStorage.getItem("Authorization")||""
 
-  readonly headers = new HttpHeaders({
-      "Content-Type": "application/json",
-      "Authorization": this.token
-    })
-
   constructor(private http:HttpClient) {}
 
   getTasks():Observable<ApiResponse<TaskResponse[]>>{
-    return this.http.get<ApiResponse<TaskResponse[]>>(this.API_URL,{headers:this.headers})
+    return this.http.get<ApiResponse<TaskResponse[]>>(this.API_URL)
   }
 
   createTask(task:TaskRequest):Observable<ApiResponse<TaskResponse>>{
-    return this.http.post<ApiResponse<TaskResponse>>(this.API_URL_CREATE,task,{headers:this.headers})
+    return this.http.post<ApiResponse<TaskResponse>>(this.API_URL_CREATE,task)
   }
 
   updateTask(id:number, data:TaskRequest):Observable<ApiResponse<TaskResponse>>{
-    return this.http.put<ApiResponse<TaskResponse>>(this.API_URL_UPDATE+id,data,{headers:this.headers})
+    return this.http.put<ApiResponse<TaskResponse>>(this.API_URL_UPDATE+id,data)
   }
 
   deleteTask(id:number):Observable<ApiResponse<TaskResponse>>{
-    return this.http.delete<ApiResponse<TaskResponse>>(this.API_URL_DELETE+id,{headers:this.headers})
+    return this.http.delete<ApiResponse<TaskResponse>>(this.API_URL_DELETE+id)
   }
 }
