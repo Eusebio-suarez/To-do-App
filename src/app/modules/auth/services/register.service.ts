@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class RegisterService {
 
-  readonly API_URL="http://localhost:8080/api/v1/auth/register"
+  readonly API_URL="https://to-do-back-soru.onrender.com/api/v1/auth/register"
 
   constructor(private http:HttpClient) {
 

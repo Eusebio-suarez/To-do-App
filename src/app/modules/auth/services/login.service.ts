@@ -10,7 +10,7 @@ import { LoginResponse } from '../models/response/loginResponse';
 })
 export class LoginService {
 
-  readonly API_URL="http://localhost:8080/api/v1/auth/login"
+  readonly API_URL="https://to-do-back-soru.onrender.com/api/v1/auth/login"
 
   constructor(private http:HttpClient) {
 

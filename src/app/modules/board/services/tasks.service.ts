@@ -10,13 +10,13 @@ import { TaskRequest } from '../models/request/taskRequest';
 })
 export class TasksService {
 
-  readonly API_URL = "http://localhost:8080/api/v1/tasks"
+  readonly API_URL = "https://to-do-back-soru.onrender.com/api/v1/tasks"
 
-  readonly API_URL_CREATE = "http://localhost:8080/api/v1/tasks/create"
+  readonly API_URL_CREATE = "https://to-do-back-soru.onrender.com/api/v1/tasks/create"
 
-  readonly API_URL_UPDATE = "http://localhost:8080/api/v1/tasks/update?id="
+  readonly API_URL_UPDATE = "https://to-do-back-soru.onrender.com/update?id="
 
-  readonly API_URL_DELETE = "http://localhost:8080/api/v1/tasks/delete?id="
+  readonly API_URL_DELETE = "https://to-do-back-soru.onrender.com/api/v1/tasks/delete?id="
 
   readonly token = localStorage.getItem("Authorization")||""
 
