@@ -5,6 +5,7 @@ import { AuthPageComponent } from './modules/auth/pages/auth-page/auth-page.comp
 import { LoginComponent } from './modules/auth/components/login/login.component';
 import { RegisterComponent } from './modules/auth/components/register/register.component';
 import { BoardPageComponent } from './modules/board/pages/board-page/board-page.component';
+import { authGuard } from './modules/auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
   },
   {
     path:"board",
-    component:BoardPageComponent
+    component:BoardPageComponent,
+    canActivate:[authGuard]
   }
 ];
 
