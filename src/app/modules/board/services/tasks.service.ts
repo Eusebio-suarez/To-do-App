@@ -14,7 +14,7 @@ export class TasksService {
 
   readonly API_URL_CREATE = "https://to-do-back-soru.onrender.com/api/v1/tasks/create"
 
-  readonly API_URL_UPDATE = "https://to-do-back-soru.onrender.com/update?id="
+  readonly API_URL_UPDATE = "https://to-do-back-soru.onrender.com/api/v1/tasks/update?id="
 
   readonly API_URL_DELETE = "https://to-do-back-soru.onrender.com/api/v1/tasks/delete?id="
 
